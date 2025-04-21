@@ -1,37 +1,24 @@
-<<<<<<< HEAD
-# tests
-=======
-# test
+# Генератор форм на Vue.js 3 + TypeScript
 
-This template should help get you started developing with Vue 3 in Vite.
+Приложение представляет собой переиспользуемый компонент-генератор форм, разработанный с использованием Vue.js 3, TypeScript, Vuex, Vue Router и Sass/SCSS.
 
-## Recommended IDE Setup
+## Технические требования
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Создан переиспользуемый компонент-генератор форм, поддерживающий следующие типы элементов:
 
-## Type Support for `.vue` Imports in TS
+- input
+- select
+- checkbox
+- textarea
+- кнопки для сохранения и отмены формы
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+Компонент импортируется на страницу и принимает следующую структуру данных:
 
-## Customize configuration
+- объект с описанием полей формы (label, атрибуты и другие необходимые параметры)
+- объект для хранения значений полей формы, реализованный через v-model (значения могут приходить с сервера или задаваться вручную)
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Обеспечена кастомизация каждого поля формы с помощью слотов.
 
-## Project Setup
+Реализована обработка событий по нажатию на кнопки сохранения и отмены.
 
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
->>>>>>> 89d32b6 (init commit)
+Подготовлены демонстрационные страницы с произвольными формами для демонстрации работы компонента.
