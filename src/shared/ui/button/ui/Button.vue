@@ -9,7 +9,7 @@ import { computed } from 'vue'
 const props = defineProps({
   type: {
     type: String,
-    default: 'button',
+    default: 'info',
   },
   disabled: {
     type: Boolean,
@@ -20,9 +20,9 @@ const props = defineProps({
 const classes = computed(() => ({
   'button_type_primary': props.type === 'primary',
   'button_type_info': props.type === 'info',
+  'button_type_warning': props.type === 'warning',
 }))
 </script>
-
 
 <style lang="scss" scoped>
 .button {
@@ -45,6 +45,10 @@ const classes = computed(() => ({
       background-color: #fff;
       color: #424242;
       border: 1px solid #ccc;
+    }
+    &_warning {
+      background-color: #f56c6c;
+      color: #fff;
     }
   }
 }

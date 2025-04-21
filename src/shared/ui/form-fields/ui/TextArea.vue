@@ -1,7 +1,7 @@
 <template>
   <FieldLayout>
     <template #label>
-      <label :for="props.name">{{ props.name }}</label>
+      <label :for="props.name">{{ props.label }}</label>
     </template>
     <template #field>
       <textarea class="textarea" v-model="model" :id="props.name" :name="props.name" :rows="props.rows" />
@@ -15,17 +15,21 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  label: {
+    type: String,
+    required: true,
+  },
   placeholder: {
     type: String,
     required: true,
   },
   rows: {
     type: Number,
-    required: true,
+    required: false,
   },
   cols: {
     type: Number,
-    required: true,
+    required: false,
   },
 })
 const model = defineModel()
@@ -34,6 +38,7 @@ const model = defineModel()
 .textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
+  max-width: 100%;
   width: 100%;
   padding: 10px;
 }
