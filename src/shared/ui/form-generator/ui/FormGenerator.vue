@@ -1,28 +1,31 @@
 <template>
   <form @submit.prevent="handleSubmit">
     <div v-for="(field, index) in props.formDefenition" :key="index">
-      <Input
-        v-if="field.type === 'email' || field.type === 'password' || field.type === 'text' || field.type === 'checkbox'"
-        v-model="model[field.name]"
-        :inputType="field.type"
-        :name="field.name"
-        :placeholder="field.placeholder"
-      />
-      <Select 
-        v-if="field.type === 'select'" 
-        v-model='model[field.name]' 
-        :options="field.options" 
-        :placeholder="field.placeholder" 
-        :name="field.name"
-      />
-      <TextArea 
-        v-if="field.type === 'textarea'" 
-        v-model='model[field.name]' 
-        :placeholder="field.placeholder" 
-        :name="field.name" 
-        :rows="field.rows" 
-        :cols="field.cols"
-      />
+      <slot v-if="field.type === 'email' || field.type === 'password' || field.type === 'text' || field.type === 'checkbox'" :name="field.name" :field="field" :model="model">
+        <Input
+          v-model="model[field.name]"
+          :inputType="field.type"
+          :name="field.name"
+          :placeholder="field.placeholder"
+        />
+      </slot>
+      <slot v-if="field.type === 'select'" :name="field.name" :field="field" :model="model">
+        <Select 
+          v-model='model[field.name]' 
+          :options="field.options" 
+          :placeholder="field.placeholder" 
+          :name="field.name"
+        />
+      </slot>
+      <slot v-if="field.type === 'textarea'" :name="field.name" :field="field" :model="model">
+        <TextArea 
+          v-model='model[field.name]' 
+          :placeholder="field.placeholder" 
+          :name="field.name" 
+          :rows="field.rows" 
+          :cols="field.cols"
+        />
+      </slot>
     </div>
   </form>
 </template>
