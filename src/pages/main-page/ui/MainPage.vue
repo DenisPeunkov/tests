@@ -31,50 +31,31 @@ const formDefenitionData = [
     name: 'name',
     label: 'Name',
     placeholder: 'Enter your name',
-    validation: {
-      required: true,
-      minLength: 3,
-    },
+
   },
   {
     type: 'email',
     name: 'email',
     label: 'Email',
     placeholder: 'Enter your email',
-    validation: {
-      required: true,
-      minLength: 3,
-    },
   },
   {
     type: 'password',
     name: 'password',
     label: 'Password',
     placeholder: 'Enter your password',
-    validation: {
-      required: true,
-      minLength: 3,
-    },
   },
   {
     type: 'checkbox',
     name: 'accept',
     label: 'accept',
     placeholder: 'Enter your password',
-    validation: {
-      required: true,
-      minLength: 3,
-    },
   },
   {
     type: 'select',
     name: 'select',
     label: 'select',
     placeholder: 'Enter your select',
-    validation: {
-      required: true,
-      minLength: 3,
-    },
     options: [
       {
         value: 'option1',
@@ -91,10 +72,6 @@ const formDefenitionData = [
     name: 'textarea',
     label: 'textarea',
     placeholder: 'Enter your text',
-    validation: {
-      required: true,
-      minLength: 3,
-    },
     rows: 5,
     cols: 33,
   },
