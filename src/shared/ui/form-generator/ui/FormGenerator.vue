@@ -29,17 +29,16 @@
     </div>
     <slot name="controls">
       <div class="controls">
-        <button @click.prevent="handleCancel">Cancel</button>
-        <button>Submit</button>
+        <Button type="primary">Сохранить</Button>
+        <Button type="info" @click.prevent="handleCancel">Отмена</Button>
       </div>
     </slot>
   </form>
 </template>
 <script setup>
-import Input from './form-fields/Input.vue'
-import Select from './form-fields/Select.vue'
-import TextArea from './form-fields/TextArea.vue'
+import { Input, Select, TextArea } from '@/shared/ui/form-fields'
 import { useFormState } from '../lib/useFormState.ts'
+import { Button } from '@/shared/ui/button'
 
 const model = defineModel()
 const {updateInitialState, resetToInitial} = useFormState(model)
@@ -67,3 +66,10 @@ const handleCancel = () => {
   props.onCancel()
 }
 </script>
+<style lang="scss" scoped>
+.controls{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+</style>

@@ -4,12 +4,16 @@
       <label :for="props.name">{{ props.name }}</label>
     </template>
     <template #field>
-      <textarea class="textarea" v-model="model" :id="props.name" :name="props.name" :rows="props.rows" />
+      <select class="select" v-model="model" :id="props.name">
+        <option v-for="option in props.options" :value="option.value" :key="option.value" >
+          {{ option.label }}
+        </option>
+      </select>
     </template>
   </FieldLayout>
 </template>
-<script setup> 
-import FieldLayout from '../FieldLayout.vue';
+<script setup>
+import FieldLayout from './FieldLayout.vue';
 const props = defineProps({
   name: {
     type: String,
@@ -19,22 +23,18 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  rows: {
-    type: Number,
-    required: true,
-  },
-  cols: {
-    type: Number,
+  options: {
+    type: Array,
     required: true,
   },
 })
 const model = defineModel()
 </script>
 <style lang="scss" scoped>
-.textarea {
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.select {
   width: 100%;
   padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 </style>
