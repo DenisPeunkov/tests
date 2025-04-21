@@ -27,22 +27,43 @@
         />
       </slot>
     </div>
+    <slot name="controls">
+      <div class="controls">
+        <button @click.prevent="handleCancel">Cancel</button>
+        <button>Submit</button>
+      </div>
+    </slot>
   </form>
 </template>
 <script setup>
 import Input from './form-fields/Input.vue'
 import Select from './form-fields/Select.vue'
 import TextArea from './form-fields/TextArea.vue'
+import { useFormState } from '../lib/useFormState.ts'
 
 const model = defineModel()
+const {updateInitialState, resetToInitial} = useFormState(model)
 const props = defineProps({
   formDefenition: {
     type: [Object, Array],
     required: true,
   },
+  onSubmit: {
+    type: Function,
+    required: true,
+  },
+  onCancel: {
+    type: Function,
+    required: true,
+  }
 })
 
 const handleSubmit = () => {
-  console.log('submit', model)
+  updateInitialState()
+  props.onSubmit()
+}
+const handleCancel = () => {
+  resetToInitial()
+  props.onCancel()
 }
 </script>

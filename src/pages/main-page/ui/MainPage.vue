@@ -1,14 +1,20 @@
 <template>
-  {{ formData }}
   <div>
     <h1>Main Page</h1>
   </div>
-  <FormGenerator v-model="formData" :form-defenition="formDefenitionData" />
+  <FormGenerator v-model="formData" :form-defenition="formDefenitionData" @submit="handleSubmit" @cancel="handleCancel" /> 
 </template>
 
 <script setup>
 import { reactive } from 'vue'
 import { FormGenerator } from '@/shared/ui/form-generator'
+
+const handleSubmit = () => {
+  console.log('submit', formData)
+}
+const handleCancel = () => {
+  console.log('cancel')
+}
 
 const formData = reactive({
   name: '',
