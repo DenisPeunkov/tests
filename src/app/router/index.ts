@@ -6,7 +6,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('@/pages/mainPage/index.ts'),
+      component: () => import('@/pages/main-page'),
     },
   ],
 })
