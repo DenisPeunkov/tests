@@ -1,7 +1,7 @@
 <template>  
   <FieldLayout :isCheckbox="props.inputType === 'checkbox'">
     <template #label>
-      <label :for="props.name">{{ props.name }}</label>
+      <label :for="props.name">{{ props.label }}</label>
     </template>
     <template #field>
       <input 
@@ -24,9 +24,13 @@ const props = defineProps({
   },
   placeholder: {
     type: String,
-    required: true,
+    required: false,
   },
   name: {
+    type: String,
+    required: true,
+  },
+  label: {
     type: String,
     required: true,
   },

@@ -1,7 +1,7 @@
 <template>
   <FieldLayout>
     <template #label>
-      <label :for="props.name">{{ props.name }}</label>
+      <label :for="props.name">{{ props.label }}</label>
     </template>
     <template #field>
       <select class="select" v-model="model" :id="props.name">
@@ -16,6 +16,10 @@
 import FieldLayout from './FieldLayout.vue';
 const props = defineProps({
   name: {
+    type: String,
+    required: true,
+  },
+  label: {
     type: String,
     required: true,
   },

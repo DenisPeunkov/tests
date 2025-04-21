@@ -6,6 +6,7 @@
           v-model="model[field.name]"
           :inputType="field.type"
           :name="field.name"
+          :label="field.label"
           :placeholder="field.placeholder"
         />
       </slot>
@@ -14,6 +15,7 @@
           v-model='model[field.name]' 
           :options="field.options" 
           :placeholder="field.placeholder" 
+          :label="field.label"
           :name="field.name"
         />
       </slot>
@@ -24,12 +26,13 @@
           :name="field.name" 
           :rows="field.rows" 
           :cols="field.cols"
+          :label="field.label"
         />
       </slot>
     </div>
     <slot name="controls">
       <div class="controls">
-        <Button type="primary">Сохранить</Button>
+        <Button type="primary">{{ props.submitButton }}</Button>
         <Button type="info" @click.prevent="handleCancel">Отмена</Button>
       </div>
     </slot>
@@ -54,6 +57,10 @@ const props = defineProps({
   onCancel: {
     type: Function,
     required: true,
+  },
+  submitButton: {
+    type: String,
+    default: 'Сохранить',
   }
 })
 
