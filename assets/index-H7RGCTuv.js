@@ -1,0 +1,1 @@
+import{_ as r}from"./FormFirst-Bq6Sj1cy.js";import{P as e}from"./PageWrapper-Bgp3togs.js";import{c as t,w as o,u as a,o as s,a as _}from"./index-YzUPWVYm.js";const u={__name:"FirstForm",setup(c){return(m,p)=>(s(),t(a(e),{title:"Форма 'Вход в систему'"},{default:o(()=>[_(a(r))]),_:1}))}};export{u as default};

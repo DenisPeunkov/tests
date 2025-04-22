@@ -1,0 +1,1 @@
+import{_ as e}from"./FormSecond-B8pX8D2j.js";import{P as r}from"./PageWrapper-Bgp3togs.js";import{c as t,w as o,u as a,o as s,a as c}from"./index-YzUPWVYm.js";const u={__name:"SecondForm",setup(_){return(m,p)=>(s(),t(a(r),{title:"Форма 'Оставить отзыв'"},{default:o(()=>[c(a(e))]),_:1}))}};export{u as default};

@@ -1,0 +1,1 @@
+import{F as e}from"./FormWithCustomFields--NqctG0i.js";import{P as r}from"./PageWrapper-Bgp3togs.js";import{c as a,w as o,u as t,o as s,a as m}from"./index-YzUPWVYm.js";const n={__name:"CustomForm",setup(c){return(p,u)=>(s(),a(t(r),{title:"Форма с кастомными полями"},{default:o(()=>[m(t(e))]),_:1}))}};export{n as default};
