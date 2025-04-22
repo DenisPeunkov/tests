@@ -1,14 +1,14 @@
 <template>
-  <div>
-    <h1>Демонстрация генератора форм</h1>
-  </div>
-  <FormFirst />
-  <FormSecond />
-  <FormWithCustomFields />
+  <PageWrapper title="Все формы">
+    <FormFirst />
+    <FormSecond />
+    <FormWithCustomFields />
+  </PageWrapper>
 </template>
 
 <script setup>
-import { FormFirst } from '@/app/widgets/form-first/';
-import { FormSecond } from '@/app/widgets/form-second/';
-import { FormWithCustomFields } from '@/app/widgets/form-with-custom-fields/';
+import { FormFirst } from '@/widgets/form-first/';
+import { FormSecond } from '@/widgets/form-second/';
+import { FormWithCustomFields } from '@/widgets/form-with-custom-fields/';
+import { PageWrapper } from '@/shared/ui/page-wrapper';
 </script>
